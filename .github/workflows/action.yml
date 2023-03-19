@@ -27,5 +27,5 @@ jobs:
       - name: archive python bundle
         uses: actions/upload-artifact@v3
         with:
-          name: python_build
-          path: python_build-${{ github.run_number }}.zip
+          name: python_build-${{ github.run_number }}.zip
+          path: .
