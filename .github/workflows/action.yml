@@ -52,7 +52,7 @@ jobs:
       - name: update lambda function code
         run: |
             aws lambda update-function-code \
-              --function-name my-pu-test \
+              --function-name my-py-lambda-function \
               --s3-bucket jayasekhar.tech \
               --s3-key python_build-${{ github.run_number }}.zip \
               --publish
