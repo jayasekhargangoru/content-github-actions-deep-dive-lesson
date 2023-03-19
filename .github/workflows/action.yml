@@ -61,7 +61,7 @@ jobs:
         run: sleep 30
         if: ${{ always() }}
       - name: Destroy test lambda function
-        run: aws lambda delete-function test-function
+        run: aws lambda delete-function --function-name test-function
 
 
   deploy:
