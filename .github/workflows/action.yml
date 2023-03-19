@@ -28,5 +28,5 @@ jobs:
         uses: actions/upload-artifact@v2
         path: python_build-${{ github.run_number }}.zip
         with:
-        name: python_build-${{ github.run_number }}.zip
-        path: python_build-${{ github.run_number }}.zip
+          name: python_build
+          path: python_build-${{ github.run_number }}.zip
