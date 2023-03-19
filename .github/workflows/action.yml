@@ -54,5 +54,5 @@ jobs:
 
       - name: upload artifact aws s3
         run: |
-        pwd
+        ls -al
         aws s3 cp python_build-${{ github.run_number }}.zip s3://jayasekhar.tech/python_build-${{ github.run_number }}.zip
