@@ -43,7 +43,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: python_build-${{ github.run_number }}.zip
-          path: .
+          path: ./
 
       - name: configure-awscli-v2
         uses: aws-actions/configure-aws-credentials@v2
@@ -53,6 +53,4 @@ jobs:
           aws-region: ap-south-1
 
       - name: upload artifact aws s3
-        run: |
-        ls -al
-        aws s3 cp python_build-${{ github.run_number }}.zip s3://jayasekhar.tech/python_build-${{ github.run_number }}.zip
+        run: aws s3 cp ./python_build-${{ github.run_number }}.zip s3://jayasekhar.tech/python_build-${{ github.run_number }}.zip
