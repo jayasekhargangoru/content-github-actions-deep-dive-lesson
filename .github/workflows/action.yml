@@ -41,7 +41,7 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
-          name: python_build-${{ github.run_number }}.zip
+          name: zipped-bundle
 
       - name: configure-awscli-v2
         uses: aws-actions/configure-aws-credentials@v2
