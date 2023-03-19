@@ -11,12 +11,19 @@ jobs:
     steps:
       - name: Check-out my lambda function code
         uses: actions/checkout@v3
-      - name: setup python v3.10
-        uses: actions/setup-python@v2
+      - name: setup python v3.9
+        uses: actions/setup-python@v4
         with:
-          python-version: "3.10"
+          python-version: '3.9'
       - name: install python libraries
         run: |
-            cd functions
-            python -m pip install --upgrade pip
-            pip install -r requirements.txt -t .; fi
+          cd function
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt -t .; fi
+      - name: zip python bundle
+        run: |
+          cd function
+          zip -r ../${{ github.sha }}.zip .
+      - name: archive python bundle
+        uses: actions/upload-artifact@v2
+        path: {{ github.sha }}.zip
