@@ -32,7 +32,6 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: python_build-${{ github.run_number }}.zip
-          path: .
 
 
   upload_artifact:
