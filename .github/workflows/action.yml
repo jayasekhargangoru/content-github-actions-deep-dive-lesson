@@ -22,7 +22,8 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt -t .; fi
       - name: Create zip bundle
         run: |
-            zip ${{ github.sha }}.zip function -r
+            cd function
+            zip python_build-${{ github.run_number }}.zip . -r
       - name: archive python bundle
         uses: actions/upload-artifact@v2
         path: {{ github.sha }}.tar
