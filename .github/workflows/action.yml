@@ -19,4 +19,4 @@ jobs:
         run: |
             cd functions
             python -m pip install --upgrade pip
-            if [-f requirements.txt ]; then pip install -r requirements.txt -t .; fi
+            pip install -r requirements.txt -t .
