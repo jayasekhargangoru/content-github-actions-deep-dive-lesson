@@ -23,7 +23,7 @@ jobs:
       - name: zip python bundle
         run: |
           cd functions
-          zip -r ../${{ github.sha }}.zip .
+          zip -r ../python.zip .
       - name: archive python bundle
         uses: actions/upload-artifact@v2
         path: {{ github.sha }}.zip
