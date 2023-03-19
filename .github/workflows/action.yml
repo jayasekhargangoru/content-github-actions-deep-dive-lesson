@@ -20,8 +20,10 @@ jobs:
           cd function
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt -t .; fi
-      - name: tar python bundle
-        run: zip release.zip ./* -r
-      # - name: archive python bundle
-      #   uses: actions/upload-artifact@v2
-      #   path: {{ github.sha }}.tar
+      - name: Create zip bundle
+        run: |
+            cd function
+            zip ../${{ github.sha }}.zip . -r
+      - name: archive python bundle
+        uses: actions/upload-artifact@v2
+        path: {{ github.sha }}.tar
