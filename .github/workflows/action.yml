@@ -26,7 +26,7 @@ jobs:
       - name: Create zip bundle
         run: |
             cd function
-            zip -r python_build-${{ github.run_number }}.zip * .*
+            zip -r ../python_build-${{ github.run_number }}.zip * .*
 
       - name: configure-awscli-v2
         uses: aws-actions/configure-aws-credentials@v2
