@@ -24,6 +24,9 @@ jobs:
         run: |
             cd function
             zip python_build-${{ github.run_number }}.zip ./* -r
-      # - name: archive python bundle
-      #   uses: actions/upload-artifact@v2
-      #   path: python_build-${{ github.run_number }}.zip
+      - name: archive python bundle
+        uses: actions/upload-artifact@v2
+        path: python_build-${{ github.run_number }}.zip
+        with:
+        name: python_build-${{ github.run_number }}.zip
+        path: python_build-${{ github.run_number }}.zip
