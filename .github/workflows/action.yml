@@ -36,4 +36,4 @@ jobs:
           aws-region: ap-south-1
 
       - name: upload artifact aws s3
-        run: aws s3 cp ./python_build-${{ github.run_number }}.zip s3://jayasekhar.tech/python_build-${{ github.run_number }}.zip
+        run: aws s3 cp python_build-${{ github.run_number }}.zip s3://jayasekhar.tech/python_build-${{ github.run_number }}.zip
