@@ -23,7 +23,7 @@ jobs:
       - name: Create zip bundle
         run: |
             cd function
-            zip python_build-${{ github.run_number }}.zip ./ -r
+            zip -r python_build-${{ github.run_number }}.zip * .*
       - name: archive python bundle
         uses: actions/upload-artifact@v3
         with:
