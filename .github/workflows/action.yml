@@ -28,23 +28,6 @@ jobs:
             cd function
             zip -r python_build-${{ github.run_number }}.zip * .*
 
-      - name: archive python bundle
-        uses: actions/upload-artifact@v3
-        with:
-          name: python_build-${{ github.run_number }}.zip
-          path: .
-
-
-  upload_artifact:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: python_build-${{ github.run_number }}.zip
-          path: ./
-
       - name: configure-awscli-v2
         uses: aws-actions/configure-aws-credentials@v2
         with:
